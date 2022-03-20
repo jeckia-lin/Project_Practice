@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform" name="myform">
+        姓名: <input type="txt" name="uname" id="uname">
+        密码: <input type="password" id="upwd" name="upwd">
+        年龄: <input type="radio" name="uage" value="0" checked="checked">xiaopihai
+             <input type="radio" name="uage" value="1">你懂的 <br>
+        爱好: <input type="checkbox" name="ufav" value="篮球">篮球
+             <input type="checkbox" name="ufav" value="爬床">爬床
+             <input type="checkbox" name="ufav" value="代码">代码 <br>
+        来自:
+        <select name="ufrom" id="ufrom">
+            <option value="-1" selected="selected">请选择</option>
+            <option value="0">北京</option>
+            <option value="1">上海</option>
+
+        </select> <br>
+        <div id="validate" style="color:red;"> </div>
+        <button type="button" onclick=" checkForm()">提交</button>
+        <button type="reset" onclick="resetForm()">重置</button>
+    </form>
+    
+    <script>
+        /* 表单元素 */
+        console.log("表单======");
+        var input1 = $(":input");
+        console.log(input1);
+        console.log("=======");
+        
+        var input2 = $("input");
+        console.log(input2);
+        function $(id){
+            return document.getElementById(id);
+        }
+        
+        function isEmpty(string){
+            if(string == null||string.trim()==""){
+                return true;
+            }
+            return false
+        }
+        function resetForm(){
+            $("myform").reset();
+        }
+        function checkForm(){
+            var uname=$("uname").value; 
+            if(isEmpty(uname)){
+                $("validate").innerHTML='用户名不能为空!';
+                return;
+            } 
+            if(uname.length<6||uname.length>12){
+                $("validate").innerHTML='用户名长度在6-12位之间';
+                return;
+            }
+
+            var upwd=$("upwd").value;
+            if(isEmpty(upwd)){
+                $("validate").innerHTML='密码不能为空!';
+                return;
+            }
+            if(upwd.length<6||upwd.length>12){
+                $("validate").innerHTML='密码长度在6-12位之间';
+                return;
+            } 
+            if(upwd.indexOf(uname)>0){
+                $("validate").innerHTML='密码不能包含姓名';
+                return;
+            } 
+            var ages =document.getElementsByName("uage");
+            var cked =ages[1].checked;
+            if(!cked){
+                $("validate").innerHTML='年龄必须选择你懂的';
+                return;
+            }
+            $("validate").innerHTML = "";
+            
+            var ufavs=document.getElementsByName("ufav");
+            var favs='';
+            console.log(ufavs);
+            for(var i=0;i<ufavs.length;i++){
+                if(ufavs[i].checked){
+                    favs+=ufavs[i].length+",";
+                }
+            }
+            if(isEmpty(favs)){
+                $("validate").innerHTML="必须选择一项爱好";
+                return;
+            }
+
+            var city=$("ufrom").value;
+            if(city == -1){
+                $("validate").innerHTML = "选择你的城市";
+                return;
+            }
+        }
+        
+    </script>
+</body>
+</html>

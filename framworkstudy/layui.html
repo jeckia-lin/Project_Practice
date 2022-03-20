@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="layui/layui-v2.6.8/layui/css/layui.css">
+    <script src="layui/layui-v2.6.8/layui/layui.js"></script>
+</head>
+<body>
+    <!-- 布局容器 -->
+    <!-- <div class="layui-container" style="background-color: navajowhite; height: 300px;" >
+    固定宽度（两侧留白）
+    </div>
+    <br>
+    <div class="layui-fluid" style="background-color: navajowhite; height: 300px;" >
+    完整宽度 
+    </div> -->
+    <!-- 珊格系统
+    1:定义行 layui-row"
+    2:定义列 layui-col-md5 （xs lg）*表示列的数量-->
+    <!-- 定义容器 -->
+    <div class="layui-container ">
+        <!-- 定义行 -->
+        <div class="layui-row layui-col-space10 ">
+            <!-- 定义列 -->
+            <div class="layui-col-md3" > 
+                <div style="background-color: blue;">内容5/12</div>
+            </div>
+            <!-- 列偏移  -->
+            <div class="layui-col-md3 layui-col-md-offset3" style="background-color: red;">
+                内容3/12
+            </div>
+            <div class="layui-col-md3" style="background-color:yellow;">
+                内容3/12
+            </div>
+    </div>
+    <!-- button 按钮样式 大小layui-btn-sm 颜色layui-btn-warm 圆角layui-btn-radius-->
+    <button type="button" class="layui-btn layui-btn-warm layui-btn-lg layui-btn-radius">standard button</button>
+    <button type="button" class="layui-btn layui-btn-warm layui-btn-lg layui-btn-radius"><i class="layui-icon layui-icon-heart">icon</i></button>
+    <a href="https://www.baidu.com/" class="layui-btn">link1</a>
+    <div class="layui-btn">one button</div>
+
+    <!-- navigation 加载elment模块 
+     layui-nav:水平导航 layui-nav    layui-nav-tree：纵向导航    layui-nav  layui-nav-tree  layui-nav-side 侧边 
+     layui-nav-child：表示二级菜单-->
+    <ul class="layui-nav">
+        <li class="layui-nav-item"><a href="">最新活动</a></li>
+        <li class="layui-nav-item layui-this" ><a href="">产品</a></li><!-- layui-this被选中项 -->
+        <li class="layui-nav-item"><a href="">大数据  </a></li>
+        <li class="layui-nav-item">
+            <a href="">解决方案 </a>
+             <dl class="layui-nav-child">
+                 <dd><a href="">移动模块</a></dd>
+                 <dd><a href="">后台模块</a></dd>
+                 <dd><a href="">最新活动</a></dd>
+             </dl>
+        </li>
+    </ul>
+    <!-- 选项卡
+    默认风格：lalyui-tab -->
+
+    <div class="layui-tab layui-tab-card" lay-allowClose="true">
+        <ul class="layui-tab-title">
+          <li class="layui-this">网站设置</li>
+          <li>用户管理</li>
+          <li>权限分配</li>
+          <li>商品管理</li>
+          <li>订单管理</li>
+        </ul>
+        <div class="layui-tab-content" style="height: 100px;">
+          <div class="layui-tab-item layui-show">1</div>
+          <div class="layui-tab-item">2</div>
+          <div class="layui-tab-item">3</div>
+          <div class="layui-tab-item">4</div>
+          <div class="layui-tab-item">5</div>
+          <div class="layui-tab-item">6</div>
+        </div>
+      </div>
+      <!-- table  lay-even：隔行换色  lay-skin：边框样式 lay-size：边框尺寸！-->
+      <table class="layui-table" lay-even lay-skin="line">
+        <colgroup> <!-- 设置表格的长宽  -->
+          <col width="150">
+          <col width="200">
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>昵称</th>
+            <th>加入时间</th>
+            <th>签名</th>
+          </tr> 
+        </thead>
+        <tbody>
+          <tr>
+            <td>贤心</td>
+            <td>2016-11-29</td>
+            <td>人生就像是一场修行</td>
+          </tr>
+          <tr>
+            <td>许闲心</td>
+            <td>2016-11-28</td>
+            <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <!-- 表单元素：需要加载form模块  -->
+      <!-- 在一个容器中设定 class="layui-form"来标识一个表单元素块-
+        required：注册浏览器所规定的必填字段
+        lay-verify：注册form模块需要验证的类型
+        class="layui-input"：layui.css提供的通用CSS类->
+      <form action="" class="layui-form">
+          <!-- 基本的行区块结构，他提供了响应式的支持 -->
+          <div class="layui-form-item">
+              <label class="layui-form-label">标题</label>
+              <div class="layui-input-inline"> <!--  layui-input-inline/block-->
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">               </div>
+    
+          </div>
+          <!-- option  optgroup分组选择 -->
+          <select name="city" lay-verify="">
+            <select name="quiz">
+                <option value="">请选择</option>
+                <optgroup label="城市记忆">
+                  <option value="你工作的第一个城市">你工作的第一个城市？</option>
+                </optgroup>
+                <optgroup label="学生时代">
+                  <option value="你的工号">你的工号？</option>
+                  <option value="你最喜欢的老师">你最喜欢的老师？</option>
+                </optgroup>
+              </select>
+              <!-- lay-search开启匹配 -->
+              <select name="city" lay-verify="" lay-search>
+                <option value="">请选择</option> 默认选择
+                <option value="010">layer</option>
+                <option value="021">form</option>
+                <option value="0571" >layim</option>
+                ……
+              </select>  
+              
+        <!-- 复选框 -->
+        <div class="layui-form-item">
+            <!-- 1:通过title自定义设置文本，如果不需要则不设置titile
+                 2:通过checked属性设置被选中的项
+                 3:通过lay-skin设置复选框的样式效果 lay-skin=“parmary”表示原始效果 -->
+            <label class="layui-form-label">爱好</label>
+            <div class="layui-input-block"> <!--  layui-input-inline小点/block块状-->
+                <input type="checkbox" name="" title="写作" checked>fdad
+                <input type="checkbox" name="" title="发呆"> dafa
+                <input type="ch eckbox" name="" title="禁用" disabled> fafad 
+
+                <input type="checkbox" name="" title="写作" lay-skin="primary" checked>d d
+                <input type="checkbox" name="" title="发呆" lay-skin="switch"> d d d
+                <input type="checkbox" name="" title="禁用" lay-skin="primary" disabled> 点点滴滴说
+  
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+      </form>
+
+      <!-- 组装使用行内表单 -->
+      <div class="layui-form-item">
+            <!-- 定义外层行内    -->
+        <div class="layui-inline">
+          <label class="layui-form-label">范围</label>
+          <div class="layui-input-inline" style="width: 100px;">
+            <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
+          </div>
+          <div class="layui-form-mid">-</div>
+          <div class="layui-input-inline" style="width: 100px;">
+            <input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        
+        <div class="layui-inline">
+          <label class="layui-form-label">密码</label>
+          <div class="layui-input-inline" style="width: 100px;">
+            <input type="password" name="" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        
+      </div>
+      
+      <form class="layui-form layui-form-pane" action="">
+        内部结构都一样，值得注意的是 复选框/开关/单选框 这些组合在该风格下需要额外添加 pane属性（否则会看起来比较别扭），如：
+        <div class="layui-form-item" pane>
+          <label class="layui-form-label">单选框</label>
+          <div class="layui-input-block">
+            <input type="radio" name="sex" value="男" title="男">
+            <input type="radio" name="sex" value="女" title="女" checked>
+          </div>
+        </div>
+      </form>
+    <script>
+        layui.use('element',function(){
+            var element = layui.element;
+        }) /* add element module */
+    </script>
+</body>
+</html>

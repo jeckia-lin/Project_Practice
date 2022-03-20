@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!-- mac option+command+a 快速注释 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor = "pink" text="blue" >
+    <h1 id = "1">Hellow</h1>
+    <p><a name="nr1">fffffff</a></p>
+    <p> hellow <br> world</p>  <!-- <!br换行> -->
+    <h2>Hellow</h2>
+    <p align = "right">good</p> <!-- <!段落标签自动换行 ,align:left,right,center,justify（对齐） ，自动前后加入空格> -->
+    <hr width="50% " align="left"> <!-- <! 分隔符> -->
+    <h3>Hellow</h3>
+    <ul type ='disc'> <!-- <!无序列表> -->
+        <li> zhangsan</li>
+        <li> lisi</li>
+        <li> wangwu</li>
+    </ul>
+    <ul type = 'square'>
+        <li> zhangsan</li>
+        <li> lisi</li>
+        <li> wangwu</li>
+    </ul>
+    <ul type = 'circle'>
+        <li> zhangsan</li> <!-- <!列表元素，必须被包含在 ol，ul里面> -->
+        <li> lisi</li>
+        <li> wangwu</li>
+    </ul>
+    <ol type="1">  <!-- <!有序列表> -->
+        
+        <li> zhangsan</li>
+        <li> lisi</li>
+        <li> wangwu</li>
+    </ol>
+    <ol type="A">
+        <li> zhangsan</li>
+        <li> lisi</li>
+        <li> wangwu</li>
+    </ol>
+    <!-- <!div/span 块级元素 div：自动换行，默认一行span：不会自动换行，不会默认一行> ；display:inline 变成行级元素 -->
+    <div align="center">goooooood ffff</div>
+    <div align="center">boyyyyyyy</div>
+    <span>zhangsan     fffff</span>
+    <pre> <!-- <!保留文本格式, > -->
+        <span>zhangsan     fffff</span>
+    </pre>
+    <div><li> <font color="red" size="10" face="楷体">Hellow</font></li> <!font 字体</div>
+    <p> <b>good</b> <strong>boy</strong> <i>！！！</i></p><!-- <!b粗体,斜体> -->
+    <a  href="https://www.baidu.com"> baidu</a> <!-- <!链接 ，href：链接位置，不会自动换行> -->
+    <a href="https://www.zhihu.com/" target="_blank">zhihu</a><!-- <!target：在新的页面打开（_blank）;在原来页面（_self)> -->
+    <a href="">maodian</a>  <!-- 没有内容默认返回最上层 -->
+    <a href="#nr1">fanhui</a> <!-- 锚点返回。#name名字 -->
+    <hr>
+    <a href="#1">fanhui2</a>
+    <a href="https://image.baidu.com/"> <!-- 嵌套跳转 -->
+    <img src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" alt="good"> <!-- alt:失败时显示的文字，align：文本如何排列 -->
+    </a>  
+    <!--表格： 
+        table：表示表格
+        tr：表示表格中的一行:row
+        td：表示表格中的标准单元格:attribute
+        th：表头（具有标题的效果，如加粗，居中）:column
+        常用属性：
+        align：水平对齐
+        valign：垂直对齐
+        border：边框
+        width:宽度
+        bgcolor：设置行的背景颜色
+        合并单元格：rowspan
+        纵向合并：colspan
+        style="border-collapse:collapse;合并表格边框
+    -->
+    <table border="1"，width="500px" style="border-collapse:collapse;">
+        <tr align="center">
+            <th>bianji</th>
+            <th>xingming</th>
+            <th>nianling</th>
+            <th>xingbie</th>
+        </tr>
+        <tr align="right" bgcolor="black">
+            <td>101</td>
+            <td>lin</td>
+            <td>19</td>
+            <td>nv</td>
+        </tr>
+        <tr>
+            <td>102 </td>
+            <td>wangwu</td>
+            <td>20</td>
+            <td>nan</td>
+        </tr>
+    </table>
+    <!-- 
+        所有标签都有的属性：
+        id：标识唯一
+        name：提交数据给后台
+        style ：设置具体样式
+        class ：设置元素样式名
+     -->
+    <!-- form：表单 ，块级元素，像服务器传输数据
+        常用属性 action 提交表单的地址
+                method 提交方式：GET，POST（get会把表单放在浏览器地址后面）
+                target：是否打开新窗口
+        提交时必须设置name，否则无法获取数据
+    -->
+    <form action="http://www.baidu.com">
+        name：<input type="text" name="uname" method="提交方式：GET，POST">
+        <button>commit</button>
+    </form>
+    <!-- input 标签 -->
+    <div>文本框<input type="text" value="100" readonly="readonly"></div>
+    <div>密码框 <input type="password"></div>
+    <!-- 单选框需要通过name属性设置为一组，复选框需要通过name属性设置为一组 -->
+    <div>单选框 
+        <input type="radio" value="man" name="sex"> nan 
+        <input type="radio" value="woman" name="sex"> nv
+    </div>
+    <div>复选框
+        <input type="checkbox" value="man" name="sex"> 1
+        <input type="checkbox" value="man" name="sex"> 2 
+        <input type="checkbox" value="man" name="sex"> 3 
+    </div>
+    <div>
+        <input type="button" value="普通按钮">
+        <input type="submit" value="提交按钮">
+    </div>
+    <!-- 实现多行文本 -->
+    <div>
+        <textarea name="good" id="" cols="5" rows="10"></textarea>
+    </div>
+    <div>
+        <!-- 标签自动聚焦 当 for和id 名字一样时 -->
+        <label for="uname"> name：
+            <input type="text" id="uname">
+        </label>
+    </div>
+    <!-- input 和 button 差不多相同
+         但button可以使用双标签 -->
+    <form action="http://www.baidu.com">
+        <input type="text" name="aname">
+        <input type="button" value="普通按钮">
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+        <hr>
+        <button type="button">普通按钮</button>
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+        <!-- 默认type 为提交 -->
+        <button>坑</button>
+        <!-- 下拉框：select，option
+            select：mutliple:可以多选
+                    size：选择范围
+                    disabled：禁用
+            option：
+                 selected：选择
+                 disabled：禁用
+                 value:提交给服务器的选项值
+                 有设置则提交设置的值，无设置则默认文本值
+        -->
+            
+        <select name="city" multiple="multiple" size="2" >
+            <option selected="selected">北京</option>
+            <option disabled="disabled">上海</option>
+            <option >深圳</option>
+        </select>
+        <!-- 字符实体：上网查阅
+        -->
+    </form>
+
+</body>
+</html>

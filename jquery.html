@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 预加载事件-->
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            console.log("ready");
+            console.log($("#p1"));
+        });
+    </script>
+</head>
+<body>
+    
+    <p id="p1"> wenben !!!!</p>
+    <div id="html">ff</div>
+    <div id="t1">gg</div>
+    <h3>便利元素 each（）</h3>
+    <span class="green">jquery</span>
+    <span class="green">javase</span>
+    <span class="green">http</span>
+    <span class="green">servlet</span>
+    <div id="test" style="cursor:pointer">点击查看名言</div>
+    <input id="btntest" type="button" value="点击就可以不用了">
+<!--     <form id="myform" name="myform">
+        姓名: <input type="txt" name="uname" id="uname">
+        密码: <input type="password" id="upwd" name="upwd">
+        <div id="parent">
+            <div id="mydiv1"> id选择器 <span>span元素</span></div>
+            <div id="mydiv1" class="blue">元素选择器</div>
+            <span class="blue">样式选择器</span>
+        </div>  
+ 
+        <input type="text" name="uname" value="oop">
+    </form>
+    <input type="checkbox" name="ch" checked="checked" id="aa">
+    <div id="conRed" class="blue larger">天蓝色</div> -->
+    <!-- dom对象返回document元素
+         jquery对象返回包装集合
+        获取：document.getElemntById();
+         $(xx) -->
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        /* 表单元素 */
+        var p = "<span>biaoqoanming</span>";
+        $("#t1").prepend(p);
+        console.log("表单======");
+        var inputts = $("input");
+        console.log(inputts);
+        console.log("=====");
+    </script>
+    <script>
+        /* 绑定事件 */
+        $("#test").bind("click",function(){
+            console.log("世上无难事");
+        });
+        var mydiv =$("#mydiv1");
+        console.log(mydiv);
+
+        var cla =$(".blue");
+        console.log(cla);
+
+        var ta =$("span");
+        console.log(ta);
+
+        var group=$("#mydiv1,.blue");
+        console.log(group);
+
+        console.log("======选择器");
+        
+        /* 后代选择器 */
+        var houdai = $("#parent div");
+        console.log(houdai);
+
+        /* 子代选择器 */
+        var zidai =$("#parent >span");
+        console.log(zidai);
+
+        /* 相邻 */
+        var xiangling=$("#mydiv1 +span");
+        console.log(xiangling);
+        /* 同辈 */
+         
+        var tongbei=$("#mydiv1  +div");
+        console.log(tongbei);
+
+        /* 对于自定义属性，attr（）可获取，prop（）不可获取 */
+        console.log("attributes")
+        var name =$("#aa").attr("name");
+        console.log(name);
+        
+        /* 添加具体样式 */
+        $("#conRed").css("font-size","100px");
+    </script>
+    <script>
+        /* 操作元素的内容
+        html（）获取
+        html（“内容”） 设置
+        text（）
+        text（“内容”）
+        通过使用html方法，可以识别标签方法
+        val（）表单元素
+        val（“值”）表单元素
+        
+        表单元素：
+        文本框text paasword radio checkbox hidden textarea select 可以操作*/
+
+        /* 创建元素  $(元素)
+        前追加：prepend（指定元素）
+        后追加：append（指定元素）
+        前追加同级 before（指定元素）
+        后追加同级元素after（指定元素） */
+        var p ="<p> zheshiyigebiao</p>";
+        $("#t1").prepend(p);
+        /* remove 删除元素 */   
+        /* 遍历元素 */
+        $(".green").each(function(index,element){
+            console.log(index);
+            console.log(element);
+            console.log(this);
+            console.log();
+        }) 
+
+        /* 绑定事件
+            bind绑定事件：
+                为备选元素添加一个或多个事件处理程序，并规定事件发生时运行的函数
+                 */
+    </script>
+</body>
+</html>

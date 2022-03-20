@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form1" name="form1" method="get" action=""></form>
+    <form id="form2" name="form2" method="get" action=""></form>
+
+    <form id="myform" name="myform" method="get" action="">
+        姓名:<input type="text" id="uname" name="uname" value="zr"> <br>
+        密码:<input type="password" id="upwd" name="upwd" value="1234"> <br>
+        <input type="hidden" id="uno" name="uno" value="隐藏域">
+        个人说明<textarea name="intro" ></textarea>
+        <button type="button" onclick="getTxt()">获取元素内容</button>
+    </form>
+    <hr>
+    <input type="radio" name="rad" value=1>1
+    <input type="radio" name="rad" value=2>2
+    <button type="button" onclick="getRadio()">获取元素内容</button>
+
+    <select id="ufrom" name="ufrom" >
+        <option value=-1>请选择</option>
+        <option value=0>北京</option>
+        <option value=1>上海</option> 
+    </select>
+    <button type="button" id="sub">获取</button>
+    <form id="myform1" name="myform2" action="https://www.deepl.com/en/translator">
+        姓名<input type="text"> 
+        <input type="button" value="提交表单"onclick="submitForm()"> 
+    </form>
+    
+    <hr>
+
+    <form id="myform2" name="myform2" action="https://www.deepl.com/en/translator">
+        姓名<input type="text"> 
+        <input type="submit" value="提交表单"onclick="submitForm2()"> 
+    <script>
+        function submitForm(){
+            document.getElementById("myform1").submit();
+        };
+        function submitForm(){
+           console.log("2222");
+        };
+    </script>
+    <script>
+        console.log("====aaaa====");
+        document.getElementById("sub").onclick=function(){
+            var ufrom=document.getElementById("ufrom");
+            console.log(ufrom);
+            var selecoptions=ufrom.options;
+            console.log(selecoptions);
+            var index=ufrom.selectedIndex;
+            console.log(index);
+            var val = selecoptions[index].value;
+            console.log(val);
+        }
+    </script>
+    <script>
+        function getTxt(){
+            /* 通过id获取 */
+        var uname = document.getElementById("uname").value;
+        console.log(uname);
+        /* 通过form表单获取 */
+        var myform = document.getElementById("myform");
+        console.log(myform);
+        var upwd = myform.upwd.value;
+        console.log(upwd);
+        /* 通过name获取 */
+        console.log ("aa======");
+        var uno1=document.getElementsByName("uno").value;
+        console.log(uno1);
+        var uno = document.getElementsByName("uno")[0].value;
+        console.log ("bb======");
+        console.log(uno);
+        /* 通过tagname获取 */
+        var intro =document.getElementsByTagName("textarea")[0].value;
+        console.log(intro);
+        
+        }
+    </script>
+    <script>
+        function getRadio(){
+            radios=document.getElementsByName("rad");
+            for(var i=0;i<radios.length;i++){
+                if(radios[i].checked==true){
+                console.log(radios[i].value);
+            }
+            }
+            
+        }
+    </script>
+    
+</body>
+<script>
+    var form1 = document.form1;
+    console.log(form1);
+
+    var form2 = document.getElementById("form2");
+    console.log(form2);
+    /*获得元素当前文档中的表单集合  */
+    var forms = document.forms;
+    /* 按照表单名称 */
+    var form3 = forms['form1'];
+    console.log(form3);
+    /* 按照索引 */
+    console.log(forms[0]);
+</script>
+</html>

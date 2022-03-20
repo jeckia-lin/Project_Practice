@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 选择器：{属性：值；属性：值} 
+    用分号结尾；
+    多个单词，加引号；-->
+    <style>
+        body{
+            background-color: pink;
+            
+            background-repeat: no-repeat;
+            background-size: auto;
+        }
+        /* p标签*/
+        /* 文本设置：text-align：justify 两端对齐 */
+        p{  
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-style: italic;
+            background-color: pink;
+            color: red;
+            text-align: center;
+            text-decoration: overline underline line-through;
+        }
+
+
+    </style>
+    <!-- CSS原则：就近原则 -->
+    <!-- rel:名称；href：链接来源 -->
+    <!-- 通用选择器 *；标签选择器 -->
+    <!-- <style>
+        * {
+        color:red;
+        }
+    </style> -->
+    <style>
+        /* 标签选择 */
+        p{
+            color: red;
+        }
+        #p2{
+            color: yellow;
+        }
+        .p4{
+            color:blueviolet;
+        }/* class selector need. */
+        #p5,.p6{
+            border: 100px;
+            background-color: cornflowerblue;
+        }/* 分组选择器，用，隔开 */
+        /* 选择器优先级：id》类选择器〉元素选择器》通用选择器 */
+    </style>
+    
+    <style>
+        /* 后代选择器（所有符合条件的后代）：用空格隔开 */
+        .food li{
+            color: red;
+        }
+        /* 子代选择器（用大于号隔开） */
+        .food >li{
+            color: yellow;
+        }
+        /* 普通兄弟选择器：+
+            相邻兄弟选择器：～ */
+    </style>
+    
+    <style>
+        /* 
+        块级元素：可以设置宽高(width height))，边距，元素会自动换行
+        行内元素：不可以设置宽高，边距，元素不会自动换行
+        行内块级元素：可以设置宽高，边距，元素不会自动换行
+        display：规定元素生成框类型：
+        none：元素被隐藏
+        block：元素变成块级元素
+        inline：元素变成行内元素
+        inline-block：行内块级元素
+        */
+        #sp1{
+            display: inline;
+            background-color: red;
+            width: 400px;
+            height: 400px;
+        }
+        #sp2{
+            display: none;
+            background-color: bisque;
+        }
+        #sp3{
+            display: block;
+            background-color:yellow;
+            width: 400px;
+            height: 400px;
+        }
+        /* float 浮动对齐 */
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            float: left;
+        }
+        /* box model
+        1:border 边框 ：color，width，style
+        2:padding 内边距  上下右左
+        3:margin 外边距*/
+        #div3{
+            border: black solid;
+            border-width: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: aquamarine;">Hellow</h1>
+    <p>这是一段文本</p>
+    <p id="p2">这是一段文本</p><!-- id不能用数字开头 -->
+    <p>这是一段文本</p>
+    <p class="p4">这是一段文本</p>
+    <p id="p5">这是一段文本</p>
+    <p class="p6">这是一段文本</p>
+    <p>这是一段文本</p>
+    <h3>水果</h3>
+    <ul class="food">
+        <li>水果
+            <ul>
+                <li>香蕉</li>
+                <li>栗子</li>
+                <li>苹果</li>
+            </ul>
+            
+        </li>
+        <li>蔬菜
+            <ul>
+                <li>青菜</li>
+                <li>白菜</li>
+                <li>胡萝不</li>
+            </ul>
+        </li>
+    </ul>
+    <span id="sp1">
+        good
+    </span>
+    <span id="sp2">
+        booooy
+    </span>
+    <span id="sp3">
+        what
+    </span>
+    <div id="div1">
+        fffffffffffff
+    </div>
+    <div id="div2">
+        looooooooooat
+    </div>
+    <div style="clear:both;"></div>
+    <div id="div3">
+        border
+    </div>
+</body>
+</html>

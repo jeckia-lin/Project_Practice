@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>布局</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="dropdown">
+        <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">主题
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu " >
+            <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#">Java</a>
+            </li>
+            <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+            </li>
+            <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#">数据通信/网络</a>
+            </li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#">分离的链接</a>
+            </li>
+        </ul>
+    </div>
+    <!-- navigation-->
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">2013</a></li>
+        <li class="active">十一月</li>
+    </ul>
+    <!-- .container类 用于固定宽度 响应式：根据分辨率自动调整 -->
+    <div class="container" style="background-color: red; height: 300px;">
+        hellow world
+    </div>
+    <hr>
+    <!-- .container-fluid 用于完整宽度 -->
+    <div class="container-fluid" style="background-color: yellow;">
+        good good！！！
+    </div>
+    <!-- 珊格网格系统：
+    默认为12份
+    container row column    xs：小屏幕，sm md lg -->
+
+    <!-- 默认容器 -->
+    <div class="container">
+        <!-- 列 :
+        1:列组合总数大于12自动换行
+        2:列偏移 col-md-offset-数值
+        3:列排序 pull 向左/push 向右
+        4:列嵌套-->
+        <div class="row">
+            <!-- 列元素  col-xs-数值 col-sm-数值 col-md-数值 col-lg-数值-->
+            <div class="col-md-4 col-lg-4" style="background-color:red">4</div>
+            <div class="col-md-4 col-lg-8" style="background-color:green">8</div>
+        </div>
+        <hr>
+        <!-- 列偏移 -->
+        <div class="row">
+            <div class="col-md-1 " style="background-color:blue">5</div>
+            <div class="col-md-1 " style="background-color:red">6</div>
+            <div class="col-md-1 col-md-offset-8" style="background-color:yellow">7</div>
+            <div class="col-md-1 " style="background-color:red">8</div>
+        </div>
+        <!-- 列排序  col-xs-pull/push数值 col-sm-数值 col-md-数值 col-lg-数值-->
+        <hr>
+        <div class="row">
+            <div class="col-md-1 " style="background-color:red">1</div>
+            <div class="col-md-1 col-md-push-3" style="background-color:blue">2</div>
+            <div class="col-md-1 " style="background-color:yellow">3</div>
+            <div class="col-md-1 " style="background-color:black">4</div>
+        </div>
+        <hr>
+        <!-- 列嵌套 -->
+        <div class="row">
+        <div class="col-md-6" style="background-color:navajowhite">
+            <div class="row">
+                <div class="col-md-1 " style="background-color:yellow">1</div>
+                <div class="col-md-9 " style="background-color:green">9
+                <div class="row">
+                <div class="col-md-1 " style="background-color:rgb(0, 38, 255)"></div>
+                <div class="col-md-9 " style="background-color:green">
+                </div></div>
+            </div>
+        </div>
+            <div class="col-md-6 " style="background-color:black">4</div>
+        </div>
+    </div>
+    <!-- 排版，h1->h6默认和html一样，默认覆盖，为了不一样，还提供了h1->h6六个类，后面可以跟small类  副标题 -->
+    <!-- 1:bootstrap可以对h1-6标题元素进行覆盖，提供了对应的类名；
+         2:段落通过.lead来突出强调内容;small变小，strong加粗，em斜体
+       -->
+    <h1>标题1 <small>副标题1</small></h1>
+    <h2>标题2 <span class="small">副标题2</span></h2>
+    <h3>标题3</h2>
+        <div class="h1">你好</div>
+    <hr>
+    <p>ggggggggggggg</p>
+    <p class="lead">o发<strong>福爱</strong>发哦<small>fafafa</small>返回oo</p>
+    <!-- 强调 -->
+    <div class="text-muted">11111</div>
+    <div class="text-primary">222222</div>
+    <div class="text-success">3333</div>
+    <div class="text-info">4444</div>
+    <div class="text-warning">444444</div>
+    <div class="text-danger">55555</div>
+    
+    <!-- 对齐 -->
+    <p class= "text-center">ffff</p>
+    <p class= "text-right">fggggf</p>
+    <p class= "text-align">fggggf</p>
+    <p class= "text-justify">fggggf</p> <!-- 两端对齐 -->
+
+    <!-- 列表 -->
+    <ul class="list-unstyled"> <!-- 去点 -->
+        <li>gggg</li>
+        <li>ggggggg</li>
+    </ul>
+    <ol class="list-inline"> <!-- 由纵向变横向 -->
+        <li>fffff</li>
+        <li>fffffff</li>
+    </ol>
+    <hr>
+    <!-- 代码 -->
+    <code>this is a simple code <br>  <!-- 单行显示 -->
+          this is a simple code
+    </code>
+    <p> 使用<kbd>ctrl</kbd> <kbd>s</kbd>保存内容</p> <!-- 快捷键 -->
+    <pre><!-- 多行显示 -->
+        &ltli&gt gggg &lt/li&gt<!-- &lt &gt 代替<>显示html标签效果-->
+        &ltli&gt ggggggg &lt/li&gt
+    </pre>
+    <!-- 当长度超过时，显示滚动条 -->
+    <pre class="pre-scrollable">
+        <ol>
+            <li>.......</li>
+            <li>.......</li>
+            <li>.......</li>
+            <li>.......</li>
+            <li>.......</li>
+            <li>.......</li>
+            <li>.......</li>
+            <li>.......</li>
+            <li>.......</li>
+            <li>.......</li>
+            <li>.......</li>
+            <li>.......</li>
+        </ol>
+    </pre>
+    <!-- table样式 -->
+    <table class="table table-bordered table-striped table-hover table-condensed"> <!-- table样式，边框，逐行换色 高亮显示 紧凑-->
+        <th class="warning">
+            <th>111</th>
+            <th>222</th>
+            <th>333</th>
+            <th>44</th>
+        </th>
+        <tr class="danger">
+            <td>ff</td>
+            <td>ff</td>
+            <td>tt</td>
+            <td>uu</td>
+        </tr>
+        <tr>
+            <td>ff</td>
+            <td>ff</td>
+            <td>tt</td>
+            <td>uu</td>
+        </tr>
+    </table>
+
+    
+    <!-- 下拉框 -->
+    <div class="row">
+        <!-- form-control 表单元素的样式，
+             表单控件的大小，.input-lg .input-sm -->
+        <div class="col-md-3">
+            <select class="form-control" multiple="multiple">
+                <option >请选择城市</option>
+                <option >北京</option>
+                <option >上海</option>
+            </select>
+        </div>
+    </div>
+    <textarea ></textarea><br>
+    <!-- 复选框  checkbox:纵向   checkbox-linline：横向-->
+    <!-- 垂直显示 -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="checkbox">
+                <label> <input type="checkbox" name="hobby"> dance</label>
+            </div>
+            <div class="checkbox">
+                <label> <input type="checkbox" name="hobby"> sing</label>
+            </div>
+        </div>
+    </div>
+    <!-- 水平显示 -->
+    <div class="row">
+        <div class="col-md-3">
+            <label class='checkbox-inline'>
+                <input type="radio" name="sex"> man
+                <input type="radio" name="sex"> woman
+            </label>
+        </div>
+    </div>
+
+    <!-- 按钮 -->
+    <button class='btn btn-danger'> 按钮1</button>
+    <button class='btn btn-warning'> 按钮2</button>
+    <!-- 通过按钮样式设置其他标签为按钮 -->
+    <a href="" class="btn-suceess">ggggg</a>
+    <span class="btn-info">ffff</span>
+    <!-- 设置按钮大小 -->
+    <button class='btn btn-lg'> 按钮3</button>
+    <button class='btn btn-sm'> 按钮4</button>
+    <!-- 禁用操作 -->
+    <button class="btn-danger" onclick="alert('hellow');" disabled="disabled">  按钮！！！！！！</button>
+
+    <br>
+    <!-- 表单控件 -->
+    <div class="row">
+        <!-- form-control 表单元素的样式，
+             表单控件的大小，.input-lg .input-sm -->
+        <div class="col-md-3">
+            <input type="text" class="form-control">
+            <input type="text" class="form-control input-lg">
+            <input type="text" class="form-control input-sm">
+        </div>
+    </div>
+    <!-- 表单布局 -->  
+    <form action="#" class="form-horizontal" role="form">
+        <h2 align="center"> 用户信息表</h2>
+        <div class="form-group">  <!-- form-group 会自动聚焦 -->
+            <label for="uname" class="control-label col-md-2">姓名</label>
+            <div class="col-md-8">
+                <input type="text" id="uname" class="form-control" placeholder="请输入姓名">
+            </div> <!-- label for属性 属于  id' -->
+        </div>
+        <div class="form-group">
+            <label for="upwd" class="control-label col-md-2">姓名</label>
+                <div class="col-md-8">
+                    <input type="text" id="uname" class="form-control" placeholder="请输入密码">
+                </div>
+        </div>
+    </form>
+    <!-- 面板 -->
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            明星合集
+        </div>
+        <div class="panel-body">
+            <div class="container">
+                <div class="row">
+                    <!-- 缩略图 -->
+                    <div class="col-md-3"> <!-- 加入珊格，否则默认一行 -->
+                        <div class="thumbnail">
+                            <img src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" alt="ff">
+                            <h3>高圆圆</h3>
+                            <button class="btn btn-default">
+                                <!-- 按钮图标  glyphicon glyphicon-heart -->
+                                <span class="glyphicon glyphicon-heart"></span> 喜欢</button>
+                            
+                            <button class="btn btn-info">
+                                <span class="glyphicon glyphicon-pencil"></span> 评论</button>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-3"> <!-- 加入珊格，否则默认一行 -->
+                        <div class="thumbnail">
+                            <img src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" alt="ff">
+                            <h3>高圆圆</h3>
+                            <button class="btn btn-default">
+                                <!-- 按钮图标  glyphicon glyphicon-heart -->
+                                <span class="glyphicon glyphicon-heart"></span> 喜欢</button>
+                            
+                            <button class="btn btn-info">
+                                <span class="glyphicon glyphicon-pencil"></span> 评论</button>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-3"> <!-- 加入珊格，否则默认一行 -->
+                        <div class="thumbnail">
+                            <img src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" alt="ff">
+                            <h3>高圆圆</h3>
+                            <button class="btn btn-default">
+                                <!-- 按钮图标  glyphicon glyphicon-heart -->
+                                <span class="glyphicon glyphicon-heart"></span> 喜欢</button>
+                            
+                            <button class="btn btn-info">
+                                <span class="glyphicon glyphicon-pencil"></span> 评论</button>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-3"> <!-- 加入珊格，否则默认一行 -->
+                        <div class="thumbnail">
+                            <img src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" alt="ff">
+                            <h3>高圆圆</h3>
+                            <button class="btn btn-default">
+                                <!-- 按钮图标  glyphicon glyphicon-heart -->
+                                <span class="glyphicon glyphicon-heart"></span> 喜欢</button>
+                            
+                            <button class="btn btn-info">
+                                <span class="glyphicon glyphicon-pencil"></span> 评论</button>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-3"> <!-- 加入珊格，否则默认一行 -->
+                        <div class="thumbnail">
+                            <img src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" alt="ff">
+                            <h3>高圆圆</h3>
+                            <button class="btn btn-default">
+                                <!-- 按钮图标  glyphicon glyphicon-heart -->
+                                <span class="glyphicon glyphicon-heart"></span> 喜欢</button>
+                            
+                            <button class="btn btn-info">
+                                <span class="glyphicon glyphicon-pencil"></span> 评论</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- 下拉菜单 -->
+   
+    <div class="dropdown">
+        <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">主题
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#">Java</a>
+            </li>
+            <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+            </li>
+            <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#">数据通信/网络</a>
+            </li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#">分离的链接</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+    <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+    
+</html>

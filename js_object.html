@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addPara()">添加段落</button>
+    <button onclick="addImg()">添加图片</button>
+    <button onclick="addTxt()">添加文本框</button>
+    <button onclick="addOptions()">添加选项</button>
+    <select name="music">
+        <option value="-1">你内心的一首歌</option>
+        <option value="0">南山南</option>
+        <option value="1">喜欢你</option>
+    </select>
+    <hr>
+    <ul>
+        <li id="red">红色</li>
+        <li >绿色</li>
+    </ul>
+    <hr>
+    <div id="container">
+        <p>1111111</p>
+    </div>
+</body>
+<script>
+    document.write("<h2>hellow</he>");
+    /* 在指定元素前加入 */
+    var lli = document.createElement("li");
+    var txt = document.createTextNode("粉色");
+    lli.appendChild(txt);
+    console.log(lli);
+    document.getElementById("red").parentElement.insertBefore(lli,document.getElementById("red"));
+    /* Document大写为类型，小写为对象 */
+    function addPara(){
+        /* 方式一 */
+        /* 创建p标签 */
+        var p = document.createElement("p");
+        console.log(p);
+        /* 创建文本标签 */
+        var txt = document.createTextNode("这是一段文本");
+        console.log(txt);
+        /* 将文本标签加入到p标签中 */
+        p.appendChild(txt);
+        console.log(p);
+        /* 获取容器 */
+        var div = document.getElementById("container");
+        div.appendChild(p);
+        /* 方式二 */
+        var b = document.createElement("p");
+        b.innerText="这是一段文本";
+        console.log("=======");
+        console.log(b);
+        div.appendChild(b);
+        /* 方式三 */
+        var c = "这是一段文本";
+        div.innerHTML+=c;
+    }
+
+    function addImg(){
+        /* 方式一 */
+        var div =document.getElementById("container");
+        var img =document.createElement("img");
+        img.src = "img/1.jpg";
+        console.log(img);
+        img.width =100;
+        img.height =100;
+        div.appendChild(img);
+        /* 方式二 */
+        var img ="<img src='img/1.jpg' />";
+        div.innerHTML+=img;
+    }
+
+    function addTxt(){
+        var div =document.getElementById("container");
+        var inp = document.createElement("input");
+        inp.type="text";
+        inp.value="sunnnny";
+        div.appendChild(inp);
+    }
+
+    function addOptions(){
+        /* select-option 第一个相当于数组地址 */
+        var music = document.getElementsByName("music")[0];
+        console.log(music);
+        var opt = document.createElement("option");
+        opt.value=2;
+        opt.text="晴天";
+        music.appendChild(opt);
+    }
+    /* 间接查找节点：
+    childnodes：返回元素的一个子节点的数组；
+    firstchild，
+    lastchild，
+    nextSibling，
+    parentNode，
+    previousSibling*/
+    var uul = document.getElementsByTagName("ul")[0];
+    console.log(uul);
+    console.log(uul.childNodes);
+    console.log("===");
+    console.log(uul.parentNode);
+    /* 删除元素 */
+    var deli = document.getElementById("red");
+    console.log(deli);
+    var par = deli.parentElement;
+    par.removeChild(deli);
+</script>
+</html>

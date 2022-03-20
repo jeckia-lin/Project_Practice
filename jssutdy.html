@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* js弱语言，直接var变量就行，不需要指定变量类型
+        只有定义的时候才能使用
+        可以同时定义多个变量
+        不能重新声明已经存在的变量 */
+        var a = "string";
+        console.log(1.1+3);
+        console.log(2);
+        console.log(parseInt("123abc"));
+        var b = 1;
+        console.log(b.toString());
+        var c = [1,2,3];
+        var d = Array(1,2,3,4);
+        console.log(c);
+        console.log(d);
+        /* 数组：
+        var c = [1,2,3];
+        var d = Array(1,2,3,4);
+        var e = new array(size)
+        索引为数字，则为包含的元素；
+        索引为非数字，则为属性，不影响长度 */
+        /* 数组遍历方式：
+        for
+        for（var 下标（任意名称）in 数组名）
+        foreach（function（element，index）{}) */
+        d.forEach(function(element,index){
+            console.log(element);
+            console.log(index);
+        });
+
+        var t = d.indexOf(1);
+        console.log(t);
+
+        var m = 20;
+        function fn1(num){
+            m = 200;
+        }
+        console.log(m)
+
+        /* 在js 中只有函数作用域
+           如果函数中变量前面没有var，怎么默认该变量为全局变量
+        */
+        console.log("==========")
+        if(true){
+            var ff=1;
+        }
+        if(true){
+            console.log(ff);
+        }
+        /* js中有内置对象存在：Array，Date，Math，String */
+
+        var obj = {
+            uname:"abc",
+            islike: true,
+            age:18,
+            SayHellow:function(){
+                console.log("heloow");
+            },
+            cats:["puipui","haige"],
+            dog:{
+                pingzhong:"j",
+                age:10,
+            }
+        };
+        console.log(obj);
+        /*序列化对象，将对象转换为字符串；
+        反序列化对象，将字符串转换为对象，只有对象才可以调用各种.方法，字符串不行。*/
+        var str = JSON.stringify(obj);
+        console.log(str);
+        var obj1 = JSON.parse(str);
+        console.log(obj1);
+        /* this为全局变量 ，this为当前调用的对象 */
+        /* 事件为js核心概念，和页面进行交互
+        事件冒泡：事件由底部向顶部传播
+        事件捕获：事件从大到小
+         */
+        /* 事件处理程序：
+        1：html事件处理，绑定在标签内
+        2: DOM 0 级事件：只能一次，会被覆盖
+        3: DOM 2 级处理事件
+        addEventListen（事件名，处理事件的函数，事件冒泡（false）或者捕获 一般默认，） */
+    </script>
+</body>
+    <button onclick="alert('hellow')" onmouseout="alert('hellow leave')">clickme</button>
+    <button id = "a1">22222</button>
+    <button id = "a2">33333</button>
+    <script>
+        function test(){
+            console.log("aaaaaaa");
+        }
+        var btn = document.getElementById("a1");
+        console.log(btn);
+        /* 绑定事件 */
+        btn.onclick = function(){console.log("aaaaaaa");}
+        
+        var btn2 = document.getElementById("a2");
+        btn2.addEventListener('click',function(){
+            console.log("333333");
+        })
+
+        /* BOM对象：浏览器的全局对象，Browser Object Model (BOM) is a browser-specific convention referring to all the objects exposed by the web browser.  */
+    </script>
+    <button id="x1" onclick="x1_x()">x1</button>
+    <button id="x2" onclick="x2_x()">x2</button>
+    <button id="x3">x3</button>
+    <button id="x4" onclick="tobaidu()">跳转到百度</button>
+    <button id="x5" onclick="test1()"></button>
+    <script>
+        function x1_x(){
+            alert("goood");
+            console.log("boooy");
+            setTimeout(a,3000);
+        }
+        function x2_x(){
+            var name = prompt("input your name");
+        }
+        function a(){
+            window.open("https://www.google.com/");
+        }
+        function tobaidu(){
+            console.log("==========");
+            setTimeout(test,3000);
+        }
+        function test(){
+            window.open("https://www.google.com/");
+        }
+    </script>
+    <script>
+        /* 使用浏览器对象模型window  中的location  获取当前访问的url */
+        var url = window.location.href;
+        console.log("======="+url);
+        function test1(){
+            window.location.href = "https://www.google.com/";
+        }
+        
+    </script>
+</html>

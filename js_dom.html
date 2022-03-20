@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1" class="para">xxxxxxx</p>
+    <p id="p1" class="para">bbbbbbbbbbbbbb</p>
+    <input type="text" name ="text">
+    <input type="checkbox" name="hobby" value="游泳">游泳
+    <input type="checkbox" name="hobby" value="篮球">篮球
+    <input type="checkbox" name="hobby" value="足球">足球
+    <hr>
+    <a href="javascript:void(0)" onclick="testById()">id获取</a>
+    <a href="javascript:void(0)" onclick="testByName()">name获取</a>
+    <a href="javascript:void(0)" onclick="testByTagName()">标签名获取</a>
+    <a href="javascript:void(0)" onclick="testByClass()">class获取</a>
+    <script>
+        /* DOM  DOCUMENT 对象，每个载入浏览器的HTML对象都会成为WINDOWs对象对的一部分
+        ，HTML中浏览器会产生树形的结构：
+        文档节点：DOCUMENT
+        元素节点：<a>,<div>
+        属性节点:id,href,name
+        文本节点:hellow
+        注释节点 */
+        /* 获取id：若有多个，则以第一个为准
+         */
+        function testById(){
+            var p = document.getElementById("p1");
+            console.log(p);
+        }
+        function testByName(){
+            var name = document.getElementsByName("hobby");
+            console.log(name);
+        }
+        function testByTagName(){
+            var inputs = document.getElementsByTagName("input");
+            console.log(inputs);
+            for(i = 0;i<inputs.length;i++){
+                console.log(inputs[i].type);
+                console.log(inputs[i].value);
+                if(inputs[i].type == "checkbox"){
+                    console.log(inputs[i].checked);
+                }
+            }
+        }
+        function testByClass(){
+            var length = document.getElementsByClassName('para').length;
+            console.log(length);
+        }
+    </script>
+</body>
+</html>

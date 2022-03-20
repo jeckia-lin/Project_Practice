@@ -1,0 +1,64 @@
+#container{
+    background-color: #f0f0f0;
+    /* 外边距 
+    上下为0
+    左右为父元素15% */
+    margin: 0 15%; /* 内间距 */
+}
+h1{
+    height: 100px;
+    color: white;
+    background-color: cornflowerblue;
+    line-height: 70px; /* 行间距 */
+    text-indent: 200px;/* 文本元素缩近；使用margin会导致h1相当于整体有内间距*/
+}
+/* 通过id选择器设置导航信息居中 */
+#nav{
+    text-align: center;/* 剧中显示 */
+} 
+/* 后代选择器 nav导航下元素 */
+#nav li{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background-color: cornflowerblue;
+    line-height: 30px ;
+    color: white;/* 字体颜色 */
+    border: 1px solid cornflowerblu;
+    border-radius: 0 10px;/* 左下角右上角原 */
+}
+#nav li a{
+    color: white;/* 字体颜色 */
+    text-decoration: none;/* 去除文本修饰，去掉a标签下划线 */
+}
+/* 通过设置a标签的伪类选择器：hover设置字体加粗 */
+#nav li a:hover{
+    font-weight: bold;
+}
+
+.img11{
+    text-align: center;
+}
+.mar1{
+    margin: 0 50px;
+}
+
+#userinfo p{
+    text-indent:30px ;
+}
+textarea{
+    width: 100%;
+    height: 100px;
+}
+#copyright{
+    background-color: cornflowerblue;
+    text-align: center;
+    color: white;
+    height: 70px;/* 如设置高度，则不会居中，需要设置行间距line-height */
+    line-height: 70px;
+}
+
+#return a{
+    text-decoration: none;
+    color: black;
+}
